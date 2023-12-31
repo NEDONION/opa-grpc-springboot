@@ -42,3 +42,7 @@ secrets.yml
 .sts4-cache
 .dylib
 .txt
+
+
+### opa ###
+opa/bundles/

@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option java_package = "com.lucas.opa.service";
+option java_multiple_files = true;
+
+service EmployeeService {
+    rpc isAllowedToCheckSalary (EmployeeRequest) returns (EmployeeResponse);
+}
+
+message EmployeeRequest {
+    string currentUser = 1;
+    string employee = 2;
+
+}
+
+message EmployeeResponse {
+    bool isAllowed = 1;
+}

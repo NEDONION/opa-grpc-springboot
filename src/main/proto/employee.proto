@@ -1,10 +1,10 @@
 syntax = "proto3";
 
-option java_package = "com.lucas.opa.service";
+option java_package = "com.lucas.opa";
 option java_multiple_files = true;
 
 service EmployeeService {
-    rpc isAllowedToCheckSalary (EmployeeRequest) returns (EmployeeResponse);
+    rpc checkEmployeeAccess (EmployeeRequest) returns (EmployeeResponse);
 }
 
 message EmployeeRequest {

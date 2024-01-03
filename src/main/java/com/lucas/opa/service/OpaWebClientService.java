@@ -1,5 +1,6 @@
 package com.lucas.opa.service;
 
+import com.lucas.opa.model.OpaRequest;
 import com.lucas.opa.model.OpaRequestBodyModel;
 import com.lucas.opa.model.OpaResponse;
 import org.springframework.beans.factory.annotation.Value;
@@ -18,7 +19,7 @@ public class OpaWebClientService {
 		this.webClient = webClientBuilder.baseUrl(opaUrl).build();
 	}
 
-	public Mono<OpaResponse> postForOpaResponse(OpaRequestBodyModel requestBody) {
+	public Mono<OpaResponse> postForOpaResponse(OpaRequest requestBody) {
 		return webClient.post()
 				.contentType(MediaType.APPLICATION_JSON)
 				.bodyValue(requestBody)

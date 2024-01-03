@@ -55,7 +55,7 @@ public class EmployeeService extends EmployeeServiceGrpc.EmployeeServiceImplBase
 							.build();
 				})
 				.doOnError(e -> {
-					log.error("Error in checkEmployeeAccess: {}", e.getMessage(), e);
+					log.error("Error in checkEmployeeAccess: {}, {}", e.getMessage(), e);
 					responseObserver.onError(Status.INTERNAL
 							.withDescription("Error processing the request")
 							.withCause(e) // only for debugging purposes
@@ -68,7 +68,7 @@ public class EmployeeService extends EmployeeServiceGrpc.EmployeeServiceImplBase
 							responseObserver.onCompleted();
 						},
 						error -> {
-							log.error("Subscription error in checkEmployeeAccess: {}", error.getMessage(), error);
+							log.error("Subscription error in checkEmployeeAccess: {}, {}", error.getMessage(), error);
 							responseObserver.onError(error);
 						}
 				);

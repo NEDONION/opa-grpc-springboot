@@ -1,10 +1,11 @@
-# A Demo App with OPA, gRPC, and Spring Boot
+# A Demo App with OPA, gRPC, WebClient and Spring Boot
 
 ![](https://raw.githubusercontent.com/NEDONION/my-pics-space/main/20240103160033.png)
 
 ## Requisites
 - Java
 - Spring Boot
+- WebClient
 - gRPC
 - Open Policy Agent
 - Docker

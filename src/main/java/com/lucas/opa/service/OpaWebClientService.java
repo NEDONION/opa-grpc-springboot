@@ -1,7 +1,6 @@
 package com.lucas.opa.service;
 
 import com.lucas.opa.model.OpaRequest;
-import com.lucas.opa.model.OpaRequestBodyModel;
 import com.lucas.opa.model.OpaResponse;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.MediaType;

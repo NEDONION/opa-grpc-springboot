@@ -14,7 +14,6 @@ import org.springframework.beans.factory.annotation.Value;
 import io.grpc.stub.StreamObserver;
 
 
-
 @GrpcService
 @Slf4j
 public class EmployeeService extends EmployeeServiceGrpc.EmployeeServiceImplBase {
@@ -44,9 +43,7 @@ public class EmployeeService extends EmployeeServiceGrpc.EmployeeServiceImplBase
 		log.info("Sending request to OPA: {}", opaRequest);
 
 		opaWebClientService.postForOpaResponse(opaRequest)
-				.doOnNext(response -> {
-					log.info("Received response from OPA: {}", response);
-				})
+				.doOnNext(response -> log.info("Received response from OPA: {}", response))
 				.map(response -> {
 					// 在构建响应之前进行日志记录
 					log.info("Mapping OPA response to EmployeeResponse: isAllow={}", response.getResult().isAllow());
